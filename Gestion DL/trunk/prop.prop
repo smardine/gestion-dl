@@ -1,0 +1,6 @@
+#Mon Jun 21 16:53:32 CEST 2010
+inspect.NOT=3
+download.dir=C\:\\Mes Documents
+download.NOT=8
+settings.files=*
+liste.exclusion=exe;rar;zip;gzip;7zip;7z
