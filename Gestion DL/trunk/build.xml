@@ -63,4 +63,54 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
+	
+	
+	<!--
+	=======================================================================
+	Compilation de iSetup.iss
+	=======================================================================
+	-->
+	
+	<target name="setupmaj" description="compiler le logiciel isetup.exe à envoyer sur le site" >
+	   		<echo message="  - compilation INNOSETUP de « Setup.iss »  "/>
+		<echo message="Creation du repertoire Setup si il n'existe pas"/> 
+		<mkdir  dir="${basedir}\Setup"/>	
+		<echo message="appel du script Gestion DL.iss"/>
+		<call-inno script="Gestion DL" dir="${basedir}"/>	
+		<copy file="${basedir}/Ini File/version.ini" tofile="${basedir}/Setup/version.ini"/>   	
+	</target>
+	
+	<!--
+		=======================================================================
+		   Macro de création et de compilation du fichier de version pour innosetup.
+		   Paramètre	   :
+			dir : répertoire ou se trouve le .iss
+			script : nom du script .iss
+		    Retour : 1 fichier créé
+			dir/script.verision.inc
+		=======================================================================
+		-->
+	<macrodef name="call-inno">
+			<attribute name="dir" default="."/>
+			<attribute name="script" />
+			<sequential>
+					
+				<!-- Appel du compiltateur en lui même -->
+				<exec executable="${iscc}" dir="@{dir}" failonerror="true">
+					<arg value="@{dir}\@{script}.iss"/>
+				</exec>		
+			</sequential>
+		</macrodef>	
+	
+	<!--
+		=======================================================================
+		   Constantes d'utilisation du compilateur de setup Inno Setup 5
+		=======================================================================
+	           -->
+
+	    <condition property="iscc" value="${inno.home}\iscc.exe" else="C:\Program Files\Inno Setup 5\iscc.exe">
+		   <isset property="inno.home"/>
+	    </condition>
+	
+	
 </project>

@@ -12,16 +12,16 @@ AppPublisher=SimsCoprs
 DefaultDirName={pf}\Gestion DL
 DefaultGroupName=Gestion DL
 AllowNoIcons=true
-OutputDir=E:\recup\ecplispe-android et autre\workspace microc\Gestion DL
+OutputDir=./Setup
 OutputBaseFilename=setup_Gestion_DL
-SetupIconFile=E:\recup\ecplispe-android et autre\workspace microc\Gestion DL\Images\network.ico
+SetupIconFile=./Images/network.ico
 Compression=lzma
 SolidCompression=true
 ;logo à utiliser sur la page d'acceuil du setup
 ;copyright Ruskof    164*313
-WizardImageFile=E:\recup\ecplispe-android et autre\workspace microc\Gestion DL\Images\SetupAcceuil.bmp
+WizardImageFile=./Images/SetupAcceuil.bmp
 ;logo à utiliser dans les fenetre suivantes      111*113
-WizardSmallImageFile=E:\recup\ecplispe-android et autre\workspace microc\Gestion DL\Images\SetupPetit.bmp
+WizardSmallImageFile=./Images/SetupPetit.bmp
 ShowLanguageDialog=auto
 
 [Languages]
@@ -34,10 +34,10 @@ Name: quicklaunchicon; Description: {cm:CreateQuickLaunchIcon}; GroupDescription
 Filename: {app}\GestionDL.exe; Description: {cm:LaunchProgram,Gestion DL}; Flags: shellexec postinstall skipifsilent
 
 [Files]
-Source: E:\recup\ecplispe-android et autre\workspace microc\Gestion DL\GestionDL.jar; DestDir: {app}; Flags: ignoreversion
-Source: E:\recup\ecplispe-android et autre\workspace microc\Gestion DL\GestionDL.exe; DestDir: {app}; Flags: ignoreversion
-Source: E:\recup\ecplispe-android et autre\workspace microc\Gestion DL\prop.prop; DestDir: {app}; Flags: ignoreversion
-Source: E:\recup\ecplispe-android et autre\workspace microc\Gestion DL\Ini File\*; DestDir: {app}\Ini File; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: ./GestionDL.jar; DestDir: {app}; Flags: ignoreversion
+Source: ./\GestionDL.exe; DestDir: {app}; Flags: ignoreversion
+Source: ./prop.prop; DestDir: {app}; Flags: ignoreversion
+Source: ./Ini File\*; DestDir: {app}\Ini File; Flags: ignoreversion recursesubdirs createallsubdirs
 
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
